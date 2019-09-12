@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>My Personal Homepage</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="static/css/resume.css" rel="stylesheet">
+  <style>
+    @media  not all and (min-width: 992px) {
+      .my-btn {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
+       style="background-image:url(/static/img/city_gray2.jpg); background-size:cover;" id="sideNav">
+    <div style="display: flex; justify-content: space-between; width: 100%">
+
+      <button id="menu-button"  class="my-btn" style="color: #BD5D38; border-width: 0px; background-color: transparent;">
+        <i class="material-icons"  style="font-size: 32px; color: #ffffff;">menu</i>
+      </button>
+
+      <button id="search-button"  class="my-btn" style="color: #BD5D38; border-width: 0px; background-color: transparent;">
+        <i class="material-icons" style="font-size: 32px; color: #ffffff;">search</i>
+
+      </button>
+    </div>
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">
+          KeunHyeok Lim
+      </span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" style="filter:  brightness(100%);" src="static/img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li>
+          <font color="white" size="4">충대왕dd</font>
+        </li>
+      </ul>
+    </div>
+
+    <div class="social-icons d-none d-lg-block">
+          <a href="#">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="{{ url_for('auth.login') }}" target="_parent">
+            <i class="fas fa-cog"></i>
+          </a>
+    </div>
+
+  </nav>
+  <div class="container-fluid p-0">
+    <section class="resume-section p-3 p-lg-5 d-flex">
+      <div class="w-100">
+        {% block title %}{% endblock %}
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <div class="subheading mb-3">
+              {% block content %}{% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="static/js/resume.min.js"></script>
+
+  <script type="text/javascript">
+    var coll = document.getElementsByClassName("expandable-list");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+    <h2>Welcome to my blog</h2>
+{% endblock%}
+
+{% block content %}
+
+        <section>
+            {% for category in categorys %}
+                {% if category['category'] == 'myprofile' %}
+                    <h3>{{ category['category'] }}</h3>
+                    {% for post in post_myprofile %}
+                        <a href="{{ url_for('blog.myprofile') }}">
+                            <h4>{{post['title']}}</h4>
+                            <p class="body">
+                                {{post['body']}}
+                            </p>
+                        </a>
+                    {% endfor %}
+                <hr class="m-0">
+                {% endif %}
+
+                {% if category['category'] == 'project' %}
+                    <h3>{{ category['category'] }}</h3>
+                    {% for post in post_project %}
+                        <a href="{{ url_for('blog.project') }}">
+                            <h4>{{post['title']}}</h4>
+                            <p>
+                                {{post['body']}}
+                            </p>
+                        </a>
+                    {% endfor %}
+                <hr class="m-0">
+                {% endif %}
+
+                {% if category['category'] == 'studying' %}
+                    <h3>{{ category['category'] }}</h3>
+                    {% for post in post_studying %}
+                        <a href="{{ url_for('blog.studying') }}">
+                            <h4>{{post['title']}}</h4>
+                            <p>
+                                {{post['body']}}
+                            </p>
+                        </a>
+                    {% endfor %}
+                <hr class="m-0">
+                {% endif %}
+
+                {% if category['category'] == 'daily' %}
+                    <h3>{{ category['category'] }}</h3>
+                    {% for post in post_daily %}
+                        <a href="{{ url_for('blog.daily') }}">
+                            <h4>{{post['title']}}</h4>
+                            <p>
+                                {{post['body']}}
+                            </p>
+                        </a>
+                    {% endfor %}
+                <hr class="m-0">
+                {% endif %}
+            {% endfor %}
+
+        </section>
+
+{% endblock %}

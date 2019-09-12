@@ -1,0 +1,15 @@
+{% extends 'auth/auth_base.html' %}
+
+{% block header %}Forgot your password?{% endblock %}
+
+
+{% block content %}
+<input type="text" class="form-control" placeholder="User_Email" id="useremail" required>
+<input type="password" class="form-control" placeholder="Password" id="password" required>
+<button class="btn btn-lg btn-primary btn-block" type="submit">
+    Send
+</button>
+
+
+
+{% endblock %}
